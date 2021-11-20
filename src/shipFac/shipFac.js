@@ -6,3 +6,39 @@
 
 // should be able to call like so:
 // carrier.hit(2)
+
+function makeShip(leng) {
+  // if (typeof leng !== 'number') return 'error';
+
+  const ship = Array.from(Array(leng).keys()).map((i) => i + 1);
+
+  const getStatus = () => {
+    console.log(ship);
+    return ship;
+  };
+
+  const hit = (num) => {
+    if (typeof num !== 'number') return 'error';
+
+    ship[ship.indexOf(num)] = 'X';
+    return getStatus();
+  };
+
+  const isSunk = () => {
+    console.log(ship.every((item) => item === 'X'));
+    ship.every((item) => item === 'X');
+    return getStatus();
+  };
+
+  return { getStatus, hit, isSunk };
+}
+
+export default makeShip;
+
+const carrier = makeShip(5);
+const battleship = makeShip(4);
+const destroyer = makeShip(3);
+const submarine = makeShip(3);
+const patrol = makeShip(2);
+
+export { carrier, battleship, destroyer, submarine, patrol };
