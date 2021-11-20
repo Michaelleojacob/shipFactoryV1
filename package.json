@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "shipfactory",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
