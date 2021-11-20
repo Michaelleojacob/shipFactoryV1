@@ -61,3 +61,24 @@ mockShip.hit(2);
 test('mockship should return [X, X]', () => {
   expect(mockShip.getStatus()).toStrictEqual(['X', 'X']);
 });
+
+const ms2 = makeShip(5);
+ms2.hit(1);
+ms2.hit(2);
+ms2.hit(5);
+
+test('ms2 should return [x,x,3,4,x]', () => {
+  expect(ms2.getStatus()).toStrictEqual(['X', 'X', 3, 4, 'X']);
+});
+
+//* testing isSunk()
+
+test('mockship.isSunk() should be true', () => {
+  expect(mockShip.isSunk()).toBe(true);
+});
+test('ms2.isSunk() should be true', () => {
+  expect(ms2.isSunk()).toBe(false);
+});
+test('makeShip(2).isSunk() to be false', () => {
+  expect(makeShip(2).isSunk()).toBe(false);
+});

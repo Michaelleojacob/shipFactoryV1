@@ -26,8 +26,8 @@ function makeShip(leng) {
 
   const isSunk = () => {
     console.log(ship.every((item) => item === 'X'));
-    ship.every((item) => item === 'X');
-    return getStatus();
+    getStatus();
+    return ship.every((item) => item === 'X');
   };
 
   return { getStatus, hit, isSunk };
